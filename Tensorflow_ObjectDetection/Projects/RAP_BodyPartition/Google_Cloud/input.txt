@@ -1,0 +1,10 @@
+Training:
+gcloud ml-engine jobs submit training object_detection_`date +%s` --runtime-version 1.2 --job-dir=gs://walton_data/data/train.record --packages dist/object_detection-0.1.tar.gz,slim/dist/slim-0.1.tar.gz  --module-name object_detection.train --region us-central1 --config object_detection/samples/cloud/sample.YAML -- --train_dir=gs://walton_data/models/train --pipeline_config_path=gs://walton_data/models/model/ssd_mobilenet_v1_coco
+_cloud.config
+
+Evaluation/Validation:
+ gcloud ml-engine jobs submit training object_detection_eval_`date +%s` --runtime-version 1.4 --job-dir=gs://walton_data/data/validation.record --pac
+kages dist/object_detection-0.1.tar.gz,slim/dist/slim-0.1.tar.gz  --module-name object_detection.eval --region us-central1 --scale-tier BASIC_GPU -- --checkpoint_dir=gs://walton_data/models/train --eval_dir=gs://walton_data/models/validation --pipeline_config_path=gs://walton_data/models/model/ssd_mobilenet_v1_coco_cloud.config
+
+
+gcloud ml-engine jobs submit training object_detection_`date +%s`  --runtime-version 1.2 --job-dir=gs://walton_data/person_attributes/job-train --packages dist/object_detection-0.1.tar.gz,slim/dist/slim-0.1.tar.gz --module-name object_detection.train --region us-central1 --config object_detection/samples/cloud/sample.YAML -- --train_dir=gs://walton_data/person_attributes/training --pipeline_config_path=gs://walton_data/person_attributes/ssd_mobilenet_cloud.config 

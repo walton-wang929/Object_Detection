@@ -1,0 +1,1 @@
+python train_BodyPartition.py --logtostderr --pipeline_config_path=D:\TF_Try\tensorflow_models\research\object_detection\My_Project\BodyPartition\models\model\ssd_mobilenet_v1_coco.config ----train_dir=D:\TF_Try\tensorflow_models\research\object_detection\My_Project\BodyPartition\training
