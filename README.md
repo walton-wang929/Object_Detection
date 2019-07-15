@@ -4,7 +4,7 @@
 
 This is a list of awesome articles about object detection. If you want to read the paper according to time, you can refer to [Date](Date.md).
 
-[deep_learning_object_detection_history](https://github.com/walton-wang929/Object_Detection/raw/master/imgs/deep_learning_object_detection_history.PNG)
+![deep_learning_object_detection_history](./imgs/deep_learning_object_detection_history.PNG)
 
 - R-CNN
 - Fast R-CNN
